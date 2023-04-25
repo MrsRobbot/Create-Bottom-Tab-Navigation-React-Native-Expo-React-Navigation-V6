@@ -1,3 +1,4 @@
+// Importing necessary components and screens
 import {  Text, Platform,  View } from 'react-native';
 import { Home, Portfolio, Prices, Settings, Transaction } from "./screens";
 import { NavigationContainer } from '@react-navigation/native';
@@ -7,8 +8,9 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 
-// Thanks for watching
+// Creating the bottom tab navigator
 const Tab =createBottomTabNavigator();
+// Setting screen options for the bottom tab navigator
 const screenOptions = {
   tabBarShowLabel:false,
   headerShown:false,
@@ -22,6 +24,7 @@ const screenOptions = {
     background: "#fff"
   }
 }
+// Main component of the app
 export default function App() {
   return (
      <NavigationContainer>
@@ -30,6 +33,7 @@ export default function App() {
           name="Home" 
           component={Home} 
           options={{
+            // Customize icon and label for the "Home" tab
             tabBarIcon: ({focused})=>{
               return (
                 <View style={{alignItems: "center", justifyContent: "center"}}> 
@@ -44,6 +48,7 @@ export default function App() {
           name="Portfolio" 
           component={Portfolio} 
           options={{
+            // Customize icon and label for the "Portfolio" tab
             tabBarIcon: ({focused})=>{
               return (
                 <View style={{alignItems: "center", justifyContent: "center"}}> 
@@ -58,6 +63,7 @@ export default function App() {
           name="Transaction" 
           component={Transaction} 
            options={{
+            // Customize icon and label for the "Transaction" tab
             tabBarIcon: ({focused})=>{
               return (
                 <View
@@ -77,10 +83,12 @@ export default function App() {
             }
            }}
           />
+          
           <Tab.Screen
            name="Prices" 
            component={Prices}
            options={{
+            // Customize icon and label for the "Prices" tab
             tabBarIcon: ({focused})=>{
               return (
                 <View style={{alignItems: "center", justifyContent: "center"}}> 
